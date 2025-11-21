@@ -18,35 +18,70 @@ export default async function handler(req, res) {
 
     const location = address || `${city}, ${state}`;
     
-    const prompt = `You are a senior commercial real estate market analyst preparing a comprehensive retail market report for ${location}. This report will be read by sophisticated commercial property owners and requires deep, hyperlocalized research.
+    const currentDate = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    
+    const prompt = `You are a senior commercial retail real estate analyst preparing a market report for ${location} as of ${currentDate}. This report will be read by sophisticated commercial property owners who need CURRENT, HYPERLOCAL retail data.
 
-CRITICAL INSTRUCTIONS:
-1. Search the web extensively for CURRENT information (last 60 days) about this specific market
-2. Find REAL tenant names, ACTUAL lease transactions, SPECIFIC developments
-3. Look within 10-mile radius of ${location}
-4. Write in an original, analytical voice - NOT a template
+CRITICAL REQUIREMENTS:
+1. Search the web EXTENSIVELY for information from the LAST 60 DAYS (since October 2025)
+2. Focus on a 10-15 mile radius around ${location}
+3. Find SPECIFIC, REAL data - actual tenant names, actual addresses, actual square footages, actual lease rates
+4. This is ${currentDate} - DO NOT reference Q4 2024, 2024 outlooks, or outdated information
+5. If you find data from more than 60 days ago, clearly note it as "recent months" not "last 60 days"
 
-REQUIRED RESEARCH (search multiple times if needed):
-- Recent retail lease signings: Who signed leases? What square footage? Where specifically?
-- Tenant departures/closures: Which retailers left? Why?
-- New retail developments: What's under construction? Who's developing it?
-- Rent comparables: What are ACTUAL asking rents per SF in recent deals?
-- Vacancy data: Current vacancy rates for this specific submarket
-- Investment sales: Any retail properties sold recently? At what cap rates?
-- Notable retailers expanding or contracting in this market
-- Local economic drivers affecting retail (employment, demographics, infrastructure)
+SEARCH FOR (10-15 mile radius from ${location}):
 
-OUTPUT FORMAT - Write 2 concise paragraphs (total approximately 200-250 words):
+**Newly Signed Leases (Last 60 Days):**
+- Which retailers signed NEW leases?
+- What shopping centers? (exact names and addresses)
+- Square footage of each lease?
+- Lease rates if available ($/SF/year or $/SF/month)?
+- Move-in dates?
 
-Paragraph 1 (Leasing Activity & Market Dynamics):
-Write 4-5 sentences covering recent leasing velocity, specific tenant activity (name actual retailers), current rent levels with data points, and vacancy trends. Include specific street names or shopping centers you find. Be concise and data-focused.
+**New Lease Listings (Currently Available):**
+- What retail spaces just hit the market?
+- Shopping center names and locations
+- Available square footages
+- Asking rents
+- Property features (anchor tenant, pad sites, inline spaces, etc.)
 
-Paragraph 2 (Investment Activity & Market Outlook):
-Write 4-5 sentences covering investment sales activity, new development pipeline with specific project names, and forward-looking outlook for the next 6-12 months. Cite specific data points. Be concise and analytical.
+**For Sale Listings (Shopping Centers/Multi-Tenant Retail):**
+- Any retail properties recently listed for sale?
+- Property names, addresses, square footages
+- Asking prices or price per SF
+- Cap rates if mentioned
+- Occupancy rates
 
-DO NOT use phrases like "As of my knowledge cutoff" or "I don't have access to real-time data." You MUST search the web and provide current, real market intelligence. If you cannot find specific data after searching, acknowledge what's publicly available vs. what requires proprietary data sources.
+**Recent Closures/Departures:**
+- Any retailers that recently closed or announced closures?
+- Spaces that became available
 
-Write naturally and professionally - vary your sentence structure, use transition words, and make it flow like a real analyst wrote it. KEEP IT CONCISE - this will be displayed in a PowerPoint slide.`;
+**Development/Construction:**
+- Any NEW retail developments under construction or recently announced?
+- Shopping center expansions or renovations?
+
+**Rent Comparables:**
+- What are CURRENT asking rents in the area (last 60 days)?
+- Mention specific shopping centers and their asking rates
+
+OUTPUT FORMAT - Write 2 concise paragraphs (200-250 words total):
+
+**Paragraph 1 - Recent Leasing Activity (Last 60 Days):**
+Write 4-5 sentences covering NEW lease signings you found, current available listings, and asking rent data from the last 60 days. Name specific retailers, shopping centers with addresses, square footages, and rent rates. Be data-driven and specific. If you can't find data from the last 60 days, say "limited publicly available data from the last 60 days" and use recent months data while being clear about timing.
+
+**Paragraph 2 - Investment Activity & Available Opportunities:**
+Write 4-5 sentences covering for-sale listings (multi-tenant retail/shopping centers), recent closures creating opportunities, any new developments, and market outlook for the NEXT 60 days (through January 2026). Include specific property names, asking prices, and cap rates when available.
+
+CRITICAL REMINDERS:
+- We are in ${currentDate} - reference current time period correctly
+- Search multiple times to find real, current data
+- Use specific names: "Starbucks signed a 2,400 SF lease at Livermore Valley Plaza" NOT "a coffee shop signed a lease"
+- Include actual numbers: square footages, lease rates, prices
+- Mention specific streets and shopping center names
+- If data is limited, acknowledge it: "Public leasing data for the last 60 days is limited, however..."
+- NEVER make up data - only use what you actually find
+
+Write in a professional, analytical tone. Keep it concise for PowerPoint display.`;
 
     const message = await anthropic.messages.create({
       model: 'claude-sonnet-4-20250514',

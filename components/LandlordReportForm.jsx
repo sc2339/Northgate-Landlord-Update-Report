@@ -579,13 +579,16 @@ export default function LandlordReportForm() {
             x: slideWidth * 0.05,
             y: marketY + marketH * 0.12,
             w: slideWidth * 0.90,
-            h: marketH * 0.82,
+            h: marketH * 0.85,
             fontSize: 14,
             color: '1E293B',
             fontFace: 'Calibri',
             align: 'left',
             valign: 'top',
-            paraSpaceAfter: 12
+            paraSpaceBefore: 6,
+            paraSpaceAfter: 6,
+            lineSpacing: 16,
+            shrinkText: true
           });
           
           // Contact list slides

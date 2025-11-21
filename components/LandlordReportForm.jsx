@@ -379,7 +379,7 @@ export default function LandlordReportForm() {
             y: slideHeight * 0.02,
             w: slideWidth * 0.94,
             h: slideHeight * 0.035,
-            fontSize: 32,
+            fontSize: 36,
             bold: true,
             color: 'FFFFFF',
             fontFace: 'Calibri',
@@ -391,7 +391,7 @@ export default function LandlordReportForm() {
             y: slideHeight * 0.06,
             w: slideWidth * 0.94,
             h: slideHeight * 0.028,
-            fontSize: 14,
+            fontSize: 16,
             color: 'FFFFFF',
             fontFace: 'Calibri',
             valign: 'middle'
@@ -426,7 +426,7 @@ export default function LandlordReportForm() {
             y: topY,
             w: propW,
             h: topH * 0.18,
-            fontSize: 13,
+            fontSize: 16,
             bold: true,
             color: '1E293B',
             fontFace: 'Calibri',
@@ -439,7 +439,7 @@ export default function LandlordReportForm() {
             y: topY + topH * 0.25,
             w: propW * 0.9,
             h: topH * 0.15,
-            fontSize: 15,
+            fontSize: 18,
             bold: true,
             color: brandColor,
             fontFace: 'Calibri',
@@ -451,7 +451,7 @@ export default function LandlordReportForm() {
             y: topY + topH * 0.46,
             w: propW * 0.9,
             h: topH * 0.12,
-            fontSize: 11,
+            fontSize: 14,
             color: '64748B',
             fontFace: 'Calibri',
             valign: 'middle'
@@ -462,7 +462,7 @@ export default function LandlordReportForm() {
             y: topY + topH * 0.64,
             w: propW * 0.9,
             h: topH * 0.12,
-            fontSize: 11,
+            fontSize: 14,
             color: '475569',
             fontFace: 'Calibri',
             valign: 'middle'
@@ -473,7 +473,7 @@ export default function LandlordReportForm() {
             y: topY + topH * 0.80,
             w: propW * 0.9,
             h: topH * 0.12,
-            fontSize: 11,
+            fontSize: 14,
             color: '475569',
             fontFace: 'Calibri',
             valign: 'middle'
@@ -532,7 +532,7 @@ export default function LandlordReportForm() {
               y: topY + topH * 0.68,
               w: kpiW,
               h: topH * 0.18,
-              fontSize: 11,
+              fontSize: 14,
               bold: true,
               color: '1E293B',
               fontFace: 'Calibri',
@@ -567,7 +567,7 @@ export default function LandlordReportForm() {
             y: marketY,
             w: slideWidth * 0.94,
             h: marketH * 0.08,
-            fontSize: 15,
+            fontSize: 18,
             bold: true,
             color: '1E293B',
             fontFace: 'Calibri',
@@ -580,14 +580,14 @@ export default function LandlordReportForm() {
             y: marketY + marketH * 0.12,
             w: slideWidth * 0.90,
             h: marketH * 0.85,
-            fontSize: 14,
+            fontSize: 18,
             color: '1E293B',
             fontFace: 'Calibri',
             align: 'left',
             valign: 'top',
             paraSpaceBefore: 6,
             paraSpaceAfter: 6,
-            lineSpacing: 16,
+            lineSpacing: 18,
             shrinkText: true
           });
           
@@ -646,7 +646,7 @@ export default function LandlordReportForm() {
         y: slideHeight * 0.023,
         w: slideWidth * 0.94,
         h: slideHeight * 0.045,
-        fontSize: 32,
+        fontSize: 36,
         bold: true,
         color: 'FFFFFF',
         fontFace: 'Calibri',
@@ -658,7 +658,7 @@ export default function LandlordReportForm() {
         y: slideHeight * 0.07,
         w: slideWidth * 0.94,
         h: slideHeight * 0.03,
-        fontSize: 14,
+        fontSize: 16,
         color: 'FFFFFF',
         fontFace: 'Calibri',
         valign: 'middle'
@@ -687,7 +687,7 @@ export default function LandlordReportForm() {
           y: tableStartY,
           w: tableWidth * widths[i],
           h: rowHeight * 1.15,
-          fontSize: 13,
+          fontSize: 15,
           bold: true,
           color: '1E293B',
           fontFace: 'Calibri',
@@ -715,7 +715,7 @@ export default function LandlordReportForm() {
         
         let xPos = slideWidth * 0.03;
         const values = [contact.company, contact.contact, contact.date, contact.method, contact.status];
-        const fontSizes = [12, 12, 12, 12, 11];
+        const fontSizes = [14, 14, 14, 14, 14];
         
         values.forEach((value, i) => {
           slide.addText(value, {
@@ -740,7 +740,7 @@ export default function LandlordReportForm() {
         x: slideWidth * 0.03,
         y: slideHeight * 0.95,
         w: tableWidth,
-        fontSize: 11,
+        fontSize: 13,
         bold: true,
         color: '64748B',
         fontFace: 'Calibri',

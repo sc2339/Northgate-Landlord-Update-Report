@@ -36,17 +36,17 @@ REQUIRED RESEARCH (search multiple times if needed):
 - Notable retailers expanding or contracting in this market
 - Local economic drivers affecting retail (employment, demographics, infrastructure)
 
-OUTPUT FORMAT - Write 2 substantive paragraphs:
+OUTPUT FORMAT - Write 2 concise paragraphs (total approximately 200-250 words):
 
 Paragraph 1 (Leasing Activity & Market Dynamics):
-Write 6-8 sentences covering recent leasing velocity, specific tenant activity (name actual retailers), current rent levels with data points, vacancy trends, and what's driving demand. Include specific street names, shopping centers, or developments you find. Use varied sentence structure and analytical language - this should read like a professional market report, not a template.
+Write 4-5 sentences covering recent leasing velocity, specific tenant activity (name actual retailers), current rent levels with data points, and vacancy trends. Include specific street names or shopping centers you find. Be concise and data-focused.
 
 Paragraph 2 (Investment Activity & Market Outlook):
-Write 6-8 sentences covering investment sales activity, new development pipeline with specific project names, market fundamentals, economic conditions affecting retail, and forward-looking outlook for the next 6-12 months. Cite specific data points, property names, and transaction details you find. Make your analysis sophisticated and nuanced.
+Write 4-5 sentences covering investment sales activity, new development pipeline with specific project names, and forward-looking outlook for the next 6-12 months. Cite specific data points. Be concise and analytical.
 
 DO NOT use phrases like "As of my knowledge cutoff" or "I don't have access to real-time data." You MUST search the web and provide current, real market intelligence. If you cannot find specific data after searching, acknowledge what's publicly available vs. what requires proprietary data sources.
 
-Write naturally and professionally - vary your sentence structure, use transition words, and make it flow like a real analyst wrote it.`;
+Write naturally and professionally - vary your sentence structure, use transition words, and make it flow like a real analyst wrote it. KEEP IT CONCISE - this will be displayed in a PowerPoint slide.`;
 
     const message = await anthropic.messages.create({
       model: 'claude-sonnet-4-20250514',
